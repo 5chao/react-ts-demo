@@ -1,4 +1,5 @@
 import React, { MouseEvent } from 'react';
+import Editor from 'for-editor';
 import axios from 'axios';
 import Header from './components/header' ;
 import { Button } from 'antd';
@@ -11,10 +12,20 @@ interface IProps {
 }
 
 interface IState {
+    value: string,
     count: number
 }
 
 class Home extends React.Component<IProps, IState> {
+
+    constructor(props: IProps) {
+        super(props)
+        this.state = {
+            value: '',
+            count: 0
+        }
+    }
+
     public componentWillMount(): void {
         axios.get('/info')
     }
@@ -25,7 +36,14 @@ class Home extends React.Component<IProps, IState> {
         })
     }
 
+    public handleChange = (val: any): void => {
+        this.setState({
+            value: val
+        })
+    }
+
     public render() {
+        const {value} = this.state
         return (<div>
             <Header />
             Home{this.props.title}
@@ -36,6 +54,9 @@ class Home extends React.Component<IProps, IState> {
                {[1, 2, 3, 4].map((item, i) => {
                    return <List key={i} onClick={this.clickHandle}><span>{item}</span></List>
                })}
+           </div>
+           <div style={{width:800}}>
+            <Editor value={value} onChange={this.handleChange} />
            </div>
         </div>)
     }
