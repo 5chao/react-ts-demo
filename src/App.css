@@ -1,0 +1,9 @@
+.nav {
+  padding: 0 60px;
+  line-height: 60px;
+  border-bottom: 1px solid #ddd;
+}
+.nav a {
+  display: inline-block;
+  margin-right: 20px;
+}
