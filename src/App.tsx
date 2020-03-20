@@ -23,6 +23,7 @@ class App extends React.Component {
               <div className="nav">
                   <Link to="/">首页</Link>
                   <Link to="/user">会员</Link>
+                    <Link to="/img">图片</Link>
                   <Link to="/404">404</Link>
               </div>
                 <Switch>

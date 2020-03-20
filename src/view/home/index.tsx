@@ -48,7 +48,7 @@ class Home extends React.Component<IProps, IState> {
             <Header />
             Home{this.props.title}
             <div>
-            <Button type="primary">点击</Button>
+            <Button type="primary">点击试试</Button>
             </div>
            <div>
                {[1, 2, 3, 4].map((item, i) => {

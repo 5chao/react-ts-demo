@@ -25,6 +25,13 @@ const routerConfig:IRouterModel[] =[
         auth: true
     },
     {
+        path: '/img',
+        component: Loadable({
+            loader: () => import('../view/imgTest'),
+            loading: Loading
+        })
+    },
+    {
         path: '/404',
         component: Loadable({
             loader: () => import('../view/notFound'),

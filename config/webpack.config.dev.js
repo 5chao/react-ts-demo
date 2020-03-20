@@ -13,7 +13,10 @@ const getClientEnvironment = require('./env');
 const paths = require('./paths');
 const TsconfigPathsPlugin = require('tsconfig-paths-webpack-plugin');
 const ManifestPlugin = require('webpack-manifest-plugin');
-const tsImportPluginFactory = require('ts-import-plugin')
+const tsImportPluginFactory = require('ts-import-plugin');
+const DashboardPlugin = require("webpack-dashboard/plugin");
+const Dashboard = require('webpack-dashboard');
+const dashboard = new Dashboard();
 const getCacheIdentifier = require('react-dev-utils/getCacheIdentifier');
 
 // Webpack uses `publicPath` to determine where the app is being served from.
@@ -370,6 +373,7 @@ module.exports = {
     ],
   },
   plugins: [
+    //new DashboardPlugin(dashboard.setData),
     // Generates an `index.html` file with the <script> injected.
     new HtmlWebpackPlugin({
       inject: true,
